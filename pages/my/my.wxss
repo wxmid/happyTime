@@ -25,4 +25,15 @@
   display: inline-block;
   width: 100%;
   margin-top:20rpx;
+  color: #fff;
+}
+.my-topbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item-bar {
+  flex:33.3333%;
+   text-align: center;
 }

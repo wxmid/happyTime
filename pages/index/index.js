@@ -42,7 +42,7 @@ Page({
           id:'fn0001',
           isOriginal:true,
           headImg:'../../assets/img/head1.jpg',
-          nickName:'GIrlLog',
+          nickName:'GirlLog',
           publishTime:'2018-04-19 10:52',
           abstract:'老婆不喜欢家里的画眉鸟，所以平时鸟笼挂在阳台上，她不在家时我就拿进屋里逗一下。刚刚在家逗鸟，看到她下班回来了，我很自觉的把鸟笼拿去阳台，然后她说：“留意你很久了，每次我到家你就往阳台挂鸟笼，给谁发信号呢？！”我。。。',
           thumbnailList:[
