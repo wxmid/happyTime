@@ -1,0 +1,22 @@
+/**app.wxss**/
+.page {
+  background: rgba(0, 0, 0, 0.1);
+}
+.container {
+  /* height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;*/
+  box-sizing: border-box; 
+} 
+
+.tab-bar {
+   background: #011e29;
+}
+
+.gap {
+    background: #e5e5e5;
+    height: 8rpx;
+}

@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/my/my",
+    "pages/logs/logs"    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#011e29",
+    "navigationBarTitleText": "开心一刻",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "white",
+    "selectedColor": "#718790",
+    "borderStyle": "white",
+    "backgroundColor": "#011e29",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "开心一刻",
+        "iconPath": "assets/img/smile.png",
+        "selectedIconPath": "assets/img/smileActive.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "assets/img/message.png",
+        "selectedIconPath": "assets/img/messageActive.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "assets/img/my.png",
+        "selectedIconPath": "assets/img/myActive.png"
+      }
+    ]
+  }
+}
