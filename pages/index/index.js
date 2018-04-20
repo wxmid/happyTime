@@ -21,7 +21,7 @@ Page({
       },
       {
         id: 'sp0003',        
-        imgurl: "../../assets/img/swiper3.jpg",
+        imgurl: "https://raw.githubusercontent.com/wxmid/happyTime/master/assets/img/swiper3.jpg",
         title: "是不是有点冷..."
       }
     ],

@@ -1,1 +1,9 @@
 /* pages/message/message.wxss */
+.message {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  color: #6c6c6c;
+}
