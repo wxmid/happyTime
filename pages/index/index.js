@@ -30,9 +30,10 @@ Page({
     // thumIndex1: 2   
   },
   //事件处理函数
-  bindViewTap: function() {
+  goTODetail: function(e) {
+    let id = e.currentTarget.id;
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../detail/detail?id=' + id
     })
   },
   onLoad: function () {
