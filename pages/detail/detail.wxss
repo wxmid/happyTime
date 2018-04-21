@@ -1,1 +1,21 @@
 /* pages/detail/detail.wxss */
+.share-funnyThing {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: rgba(119,235,255,0.49);
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  position: fixed  ; /*相对定位*/
+}
+.share-funnyThing::after {
+  border: none;
+}
+.share-funnyThing image {
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  padding: 5rpx;
+  box-sizing: border-box;
+}

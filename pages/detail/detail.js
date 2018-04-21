@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-  id:''
+  id:'',
+  top: ' ',
+  left: ' ',
+  windowWidth: 0,
+  windowHeight: 0
   },
 
   /**
@@ -18,6 +22,13 @@ Page({
     })
     wx.setNavigationBarTitle({
       title: funnyArticleId
+    });
+    //获取窗口宽高
+    let windowWidth = wx.getSystemInfoSync().windowWidth;
+    let windowHeight = wx.getSystemInfoSync().windowHeight; 
+    this.setData({
+      windowWidth: windowWidth,
+      windowHeight:windowHeight
     })
   },
 
@@ -96,5 +107,24 @@ Page({
         })
       }
     }
-  }
+  },
+setTouchMove: function (e) {
+  console.log("---------------- e.touches[0].clientX----------------8==" + e.touches[0].clientX)
+  console.log("---------------- e.touches[0].clienty----------------8=======" + e.touches[0].clientY);
+  //获取窗口宽高
+  let windowWidth = this.data.windowWidth;
+  let windowHeight = this.data.windowHeight;  
+  if ((e.touches[0].clientX < windowWidth) && e.touches[0].clientY < windowHeight && e.touches[0].clientX > 0 && e.touches[0].clientY > 0) {
+  this.setData({
+    left: e.touches[0].clientX -20,
+    top: e.touches[0].clientY - 60
+  })
+  } else {
+    // this.setData({
+    //   left: 650,
+    //   top: 1110
+    // })
+  } 
+
+},
 })
