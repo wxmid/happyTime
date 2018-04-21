@@ -4,4 +4,6 @@
   <button class='share-funnyThing' open-type='share' style=" top:{{top}}px;left:{{left}}px;margin: 10% 0rpx 0rpx 0%;" bindtouchmove="setTouchMove">
     <image src='../../assets/img/send5.png'></image>
   </button>
+    <image src='../../assets/img/gx3.jpg' width="300px" height='200px' bindlongtap='saveImage'></image>
+
 </view>

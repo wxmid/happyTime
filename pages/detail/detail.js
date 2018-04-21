@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  id:'',
+  id:'1',
   top: ' ',
   left: ' ',
-  windowWidth: 0,
+  windowWidth: 320,
   windowHeight: 0
   },
 
@@ -16,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let funnyArticleId = options.id;
+    let funnyArticleId = options.id ? options.id : '';
     this.setData({
       id: funnyArticleId
     })
@@ -109,8 +109,8 @@ Page({
     }
   },
 setTouchMove: function (e) {
-  console.log("---------------- e.touches[0].clientX----------------8==" + e.touches[0].clientX)
-  console.log("---------------- e.touches[0].clienty----------------8=======" + e.touches[0].clientY);
+  // console.log("---------------- e.touches[0].clientX----------------8==" + e.touches[0].clientX)
+  // console.log("---------------- e.touches[0].clienty----------------8=======" + e.touches[0].clientY);
   //获取窗口宽高
   let windowWidth = this.data.windowWidth;
   let windowHeight = this.data.windowHeight;  
@@ -127,4 +127,27 @@ setTouchMove: function (e) {
   } 
 
 },
+  saveImage:function(e) {
+    wx.saveImageToPhotosAlbum({
+      success(res) {
+        wx.showToast({
+          title: '保存成功',
+          mask: true,
+          image: '../../assets/img/success_1f.png',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '转发失败',
+          image: '../../assets/img/error0.png',
+          icon: 'error',
+          mask: true,
+          duration: 2000
+        })
+      }
+    })
+  }
 })
