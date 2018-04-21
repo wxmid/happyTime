@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+  id:''
   },
 
   /**
@@ -13,6 +13,12 @@ Page({
    */
   onLoad: function (options) {
     let funnyArticleId = options.id;
+    this.setData({
+      id: funnyArticleId
+    })
+    wx.setNavigationBarTitle({
+      title: funnyArticleId
+    })
   },
 
   /**
@@ -60,7 +66,35 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '自定义转发标题1',
+      imageUrl: '../../assets/img/gx5.jpg',
+      path: '/pages/detail/detail?id=' + this.data.id,
+      success: function (res) {
+        // 转发成功
+        wx.showToast({
+          title: '转发成功',
+          mask:true,
+          image:'../../assets/img/success_1f.png',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '转发失败',
+          image: '../../assets/img/error0.png',          
+          icon: 'error',
+          mask: true,          
+          duration: 2000
+        })
+      }
+    }
   }
 })
