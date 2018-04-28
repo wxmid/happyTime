@@ -1,4 +1,7 @@
 /* pages/my/my.wxss */
+page {
+  background: rgba(189, 189, 189, 0.52);  
+}
 .my-container {
   height: 100%;
   display: flex;

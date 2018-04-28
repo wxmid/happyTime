@@ -1,21 +1,97 @@
 /* pages/detail/detail.wxss */
+.page {
+  padding: 20rpx 20rpx;
+}
 .share-funnyThing {
   width: 80rpx;
   height: 80rpx;
-  line-height: 80rpx;
+  /* line-height: 70rpx;   */
   background: rgba(119,235,255,0.49);
   border: none;
   padding: 0;
   border-radius: 50%;
   position: fixed  ; /*相对定位*/
-}
-.share-funnyThing::after {
-  border: none;
+  text-align: center;
 }
 .share-funnyThing image {
   display: inline-block;
-  width: 70rpx;
-  height: 70rpx;
-  padding: 5rpx;
+  width: 64rpx;
+  height: 64rpx;
+   padding: 8rpx; 
+   vertical-align: middle; 
+  /* box-sizing: border-box; */
+}
+.move-area {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: elipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2 
+}
+/* 作者信息 */
+.publisher-info {
+  background: #fff;
+  height: 100rpx;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+}
+.publisher-head {
+  display: inline-block;
+  height: 100%;
+  padding: 10rpx 0;  
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.publisher-head image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.base-info {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% - 200rpx);
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.base-info text {
+  display: inline-block;
+  width:100%;
+  line-height: 40rpx;
+  float: left;
+}
+.nickName {
+  font-size: 30rpx;
+  color: #ff6c00;
+}
+.publish-time {
+  color: #4CAF50;  
+  font-size: 24rpx;
+}
+.original {
+  width: 80rpx;
+  height: 100%;
+  text-align: center;
+}
+.original image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.original text {
+  display: inline-block;
+  width: 100%;
+  font-size: 18rpx;
+  float:left;
 }

@@ -6,30 +6,21 @@ Page({
    */
   data: {
   id:'1',
-  top: ' ',
-  left: ' ',
-  windowWidth: 320,
-  windowHeight: 0
+  x:360,
+  y:336,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let funnyArticleId = options.id ? options.id : '';
+    let funnyArticleId = options.id ? options.id : '忍住别出声';
     this.setData({
       id: funnyArticleId
     })
     wx.setNavigationBarTitle({
       title: funnyArticleId
     });
-    //获取窗口宽高
-    let windowWidth = wx.getSystemInfoSync().windowWidth;
-    let windowHeight = wx.getSystemInfoSync().windowHeight; 
-    this.setData({
-      windowWidth: windowWidth,
-      windowHeight:windowHeight
-    })
   },
 
   /**
@@ -107,47 +98,5 @@ Page({
         })
       }
     }
-  },
-setTouchMove: function (e) {
-  // console.log("---------------- e.touches[0].clientX----------------8==" + e.touches[0].clientX)
-  // console.log("---------------- e.touches[0].clienty----------------8=======" + e.touches[0].clientY);
-  //获取窗口宽高
-  let windowWidth = this.data.windowWidth;
-  let windowHeight = this.data.windowHeight;  
-  if ((e.touches[0].clientX < windowWidth) && e.touches[0].clientY < windowHeight && e.touches[0].clientX > 0 && e.touches[0].clientY > 0) {
-  this.setData({
-    left: e.touches[0].clientX -20,
-    top: e.touches[0].clientY - 60
-  })
-  } else {
-    // this.setData({
-    //   left: 650,
-    //   top: 1110
-    // })
-  } 
-
-},
-  saveImage:function(e) {
-    wx.saveImageToPhotosAlbum({
-      success(res) {
-        wx.showToast({
-          title: '保存成功',
-          mask: true,
-          image: '../../assets/img/success_1f.png',
-          icon: 'success',
-          duration: 2000
-        })
-      },
-      fail: function (res) {
-        // 转发失败
-        wx.showToast({
-          title: '转发失败',
-          image: '../../assets/img/error0.png',
-          icon: 'error',
-          mask: true,
-          duration: 2000
-        })
-      }
-    })
-  }
+  }, 
 })
