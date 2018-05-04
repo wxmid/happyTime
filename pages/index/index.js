@@ -60,7 +60,7 @@ Page({
           publishTime: '2018-04-10 19:46',
           abstract: '老爸给老妈买了一个特别好看的项链，我羡慕的不要不要的，一直夸赞项链好看。老妈说道：“虽然好看，你也不要买，这东西不适合你。”我问道：“怎么不适合我？”老妈答：“太贵，你买了你老公会骂你的。”',
           thumbnailList: [
-            '../../assets/img/gx4.jpg',
+            '../../assets/img/gx7.jpg',
             '../../assets/img/gx5.jpg'
           ]
         },
