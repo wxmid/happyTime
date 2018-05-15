@@ -1,22 +1,28 @@
 <!--pages/detail/detail.wxml-->
 <movable-area class='move-area' style="height: 100%; width: 100%;">
 <view class='page'>
-  <view class='title'>老婆不喜欢家里的画眉鸟，所以平时鸟笼挂在阳台上，她不在家时我就拿进屋里逗一下。刚刚在家逗鸟，看到她下班回来了，我很自觉的把鸟笼拿去阳台，然后她说：“留意你很久了，每次我到家你就往阳台挂鸟笼，给谁发信号呢？！”我。。。</view>
   <view class='publisher-info'>
-    <view class='publisher-head'><image src='{{item.headImg}}'></image></view>
+    <view class='publisher-head'><image src='{{funny.headImg}}'></image></view>
     <view class='base-info'>
-      <text class='nickName'>{{item.nickName}}</text>
-      <text class='publish-time'>{{item.publishTime}}</text>
+      <text class='nickName'>{{funny.nickName}}</text>
+      <text class='publish-time'>{{funny.publishTime}}</text>
     </view>
-    <view class='original'>
+    <view class='original' wx:if="{{funny.isOriginal}}">
       <image src='../../assets/img/original.png'></image>
       <text>原创</text>
     </view>
   </view>
+  <block wx:for="{{funny.funnyStorylList}}">
+    <text class='content-article'>{{index + 1 + "：" +item.content}}</text>
+    <view class='article-img'>
+      <image src="{{item.image}}"></image>
+    </view>
+  </block>
+  <view class='comment'>
+  
+  </view>
 
-
-
-  <movable-view class='share-funnyThing' x="{{x}}" y="{{y}}" direction="all">
+  <movable-view class='share-funnyThing' x="{{x}}" y="{{y}}" direction="all" bindtap='gotoIndex'>
     <image src='../../assets/img/send5.png'></image>    
   </movable-view>
 </view>
