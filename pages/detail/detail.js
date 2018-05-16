@@ -8,7 +8,8 @@ Page({
   id:'1',
   x:360,
   y:336,
-  funny: {}
+  funny: {},
+  zan:'zan'
   },
 
   /**
@@ -19,10 +20,11 @@ Page({
     //根据id获取内容
     let funnyStore = {
       id: 'fn0001',
+      user_id: '',
       isOriginal: true,
       headImg: '../../assets/img/head1.jpg',
       nickName: 'GirlLog',
-      publishTime: '2018-04-19 10:52',
+      publishTime: 1526441126711,
       funnyStorylList: [
         {
           content: '老婆不喜欢家里的画眉鸟，所以平时鸟笼挂在阳台上，她不在家时我就拿进屋里逗一下。刚刚在家逗鸟，看到她下班回来了，我很自觉的把鸟笼拿去阳台，然后她说：“留意你很久了，每次我到家你就往阳台挂鸟笼，给谁发信号呢？！”我。。。',
@@ -40,6 +42,66 @@ Page({
         {
           content: '婚礼，新郎：其实我在爱上你后，还爱过很多人。。。台下一片哗然，新娘也惊呆了。看到这情景，新郎满意的继续说：很多人，包括你的父母，你家人，你的朋友。。。台下掌声雷动。新娘顿了顿，问：也包括我的闺密吗？',
           image: '../../assets/img/gx4.jpg'
+        }
+      ],
+      comment:[
+        {
+          id: 'cm15264375485531111',
+          user_id: '',
+          headImg: '../../assets/img/head2.jpg',
+          nickName: 'MR.Mercury',
+          commentTime: 1526441163299,
+          content:"哈哈哈，第二个神了~",
+          zanNum: 38,          
+          response:[
+            {
+              id: 'cm15264375485531111',
+              user_id: '',
+              headImg: '../../assets/img/head3.jpg',
+              nickName: 'O°MyへLove',
+              commentTime: 1526441185454,
+              content: "老司机呀~",
+              responseTo:''
+            },
+            {
+              id: 'cm15264375485531111',
+              user_id: '',
+              headImg: '../../assets/img/head4.jpg',
+              nickName: '斯图亚特',
+              commentTime: 1526441197180,
+              content: "嘿嘿嘿~",
+              responseTo: 'O°MyへLove'
+            }
+          ]
+        },
+        {
+          id: 'cm15264658603651234',
+          user_id: '',
+          headImg: '../../assets/img/head3.jpg',
+          nickName: '斯图亚特',
+          commentTime: 1526441163299,
+          content: "你们都是老司机~",
+          zanNum: 7,
+          response: [
+            {
+              id: 'cm15264659150022222',
+              user_id: '',
+              headImg: '../../assets/img/head4.jpg',
+              nickName: 'O°MyへLove',
+              commentTime: 1526441185454,
+              content: " 这兄弟我认识,走的时候很安详,那天风很大,火烧的很旺,家属很坚强,都没有掉眼泪。享年18,如今、坟头草两米多高…… ",
+              responseTo: ''
+            },
+            {
+              id: 'cm15264375485531111',
+              user_id: '',
+              headImg: '../../assets/img/head4.jpg',
+              nickName: '斯图亚特',
+              commentTime: 1526441197180,
+              content: "'婚礼，新郎：其实我在爱上你后，还爱过很多人。。。",
+              responseTo: 'O°MyへLove'
+            }
+          ]
         }
       ]
     };
@@ -130,6 +192,17 @@ Page({
   gotoIndex:function() {
     wx.switchTab({
       url: '../index/index',
+    })
+  },
+  activeZan:function() {
+    let zan = "zan";
+    if(this.data.zan == "zan") {
+      zan = "zanActive";
+    } else {
+      zan = "zan";
+    }
+    this.setData({
+      zan: zan
     })
   }
 })

@@ -1,11 +1,12 @@
 <!--pages/detail/detail.wxml-->
+<wxs src='../../utils/fun.wxs' module="format"></wxs>
 <movable-area class='move-area' style="height: 100%; width: 100%;">
 <view class='page'>
   <view class='publisher-info'>
     <view class='publisher-head'><image src='{{funny.headImg}}'></image></view>
     <view class='base-info'>
       <text class='nickName'>{{funny.nickName}}</text>
-      <text class='publish-time'>{{funny.publishTime}}</text>
+      <text class='publish-time'>{{format.formatTime(funny.publishTime,"")}}</text>
     </view>
     <view class='original' wx:if="{{funny.isOriginal}}">
       <image src='../../assets/img/original.png'></image>
@@ -19,7 +20,34 @@
     </view>
   </block>
   <view class='comment'>
-  
+    <view class='comment-title'>评论区</view>
+    <view class='no-comment' wx:if="{{!funny.comment.length}}">暂无评论</view>
+    <view class='comment-container'>
+      <block wx:for="{{funny.comment}}" wx:for-item="item" wx:for-index="index">
+        <view class="parent-comment">
+          <view class='publisher-info'>
+            <view class='publisher-head'><image src='{{item.headImg}}'></image></view>
+            <view class='base-info'>
+              <text class='nickName'>{{item.nickName}}</text>
+              <text class='publish-time'>{{format.formatTime(item.commentTime,"")}}</text>
+            </view>
+            <view class='zan' bindtap='activeZan'>
+              <image src='../../assets/img/{{zan}}.png'></image>
+              <text>{{item.zanNum}}</text>
+            </view>
+          </view>
+          <view class='comment-content'>{{item.content}}</view>
+          <view class='sub-comment-content'>
+            <block wx:for="{{item.response}}" wx:for-item="item1" wx:for-index="index1">
+              <view class="sub-comment-items">
+                <view class="sub-comment-response" wx:if="{{item1.responseTo}}">{{item1.nickName}}<text class='color-default'>回复</text>{{item1.responseTo}}<text class='color-default'>: {{item1.content}}</text></view>
+                <view class="sub-comment-response" wx:else>{{item1.nickName}}<text class='color-default'>: {{item1.content}}</text></view>              
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
 
   <movable-view class='share-funnyThing' x="{{x}}" y="{{y}}" direction="all" bindtap='gotoIndex'>

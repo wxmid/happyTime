@@ -11,16 +11,19 @@ Page({
     newEvents:[
       {
         id:'sp0001',
+        user_id: '',
         imgurl:"../../assets/img/swiper1.jpg",
         title:"哈哈哈哈，这是啥..."
       },
       {
-        id: 'sp0002',        
+        id: 'sp0002',   
+        user_id: '',     
         imgurl: "../../assets/img/swiper2.jpg",
         title: "别人家的..."
       },
       {
-        id: 'sp0003',        
+        id: 'sp0003',    
+        user_id: '',    
         imgurl: "https://raw.githubusercontent.com/wxmid/happyTime/master/assets/img/swiper3.jpg",
         title: "是不是有点冷..."
       }
@@ -41,6 +44,7 @@ Page({
       funnyList:[
         {
           id:'fn0001',
+          user_id:'',
           isOriginal:true,
           headImg:'../../assets/img/head1.jpg',
           nickName:'GirlLog',
@@ -53,7 +57,8 @@ Page({
           ]
         },
         {
-          id: 'fn0002',          
+          id: 'fn0002',  
+          user_id: '',        
           isOriginal: false,
           headImg: '',
           nickName: '开心一刻',
@@ -66,6 +71,7 @@ Page({
         },
         {
           id: 'fn0003',
+          user_id: '',
           isOriginal: false,
           headImg: '',
           nickName: '开心一刻',
@@ -77,6 +83,7 @@ Page({
         },
         {
           id: 'fn0004',
+          user_id: '',
           isOriginal: true,
           headImg: '../../assets/img/head2.jpg',
           nickName: 'MR.Mercury',
@@ -91,6 +98,7 @@ Page({
         },
         {
           id: 'fn0005',
+          user_id: '',
           isOriginal: true,
           headImg: '../../assets/img/head3.jpg',
           nickName: 'O°MyへLove',
@@ -103,6 +111,7 @@ Page({
         },
         {
           id: 'fn0006',
+          user_id: '',
           isOriginal: false,
           headImg: '',
           nickName: '开心一刻',
