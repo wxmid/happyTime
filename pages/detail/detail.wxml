@@ -31,8 +31,8 @@
               <text class='nickName'>{{item.nickName}}</text>
               <text class='publish-time'>{{format.formatTime(item.commentTime,"")}}</text>
             </view>
-            <view class='zan' bindtap='activeZan'>
-              <image src='../../assets/img/{{zan}}.png'></image>
+            <view class='zan' bindtap='activeZan' data-index="{{index}}" data-id="{{item.id}}">
+              <image src='../../assets/img/{{item.zan ? "zanActive" : "zan" }}.png'></image>
               <text>{{item.zanNum}}</text>
             </view>
           </view>

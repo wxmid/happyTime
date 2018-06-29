@@ -1,4 +1,5 @@
 //index.js
+const HOST = require('../../config.js').host;
 //获取应用实例
 const app = getApp()
 
@@ -30,7 +31,8 @@ Page({
     ],
     funnyList:[],
     // thumIndex:3,
-    // thumIndex1: 2   
+    // thumIndex1: 2 
+    hasMessage:false,
   },
   //事件处理函数
   goTODetail: function(e) {
@@ -124,6 +126,26 @@ Page({
           ]
         }
       ]
+    });
+    this.getHappyList();
+  },
+  getHappyList:function() {
+    wx.request({
+      url: HOST + 's', //仅为示例，并非真实的接口地址
+      method:"POST",
+      data: {
+        id:'fn0001'
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+      },
+      fail:function(res) {
+        console.log(res.data)
+        
+      }
     })
   }
 })

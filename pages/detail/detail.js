@@ -8,8 +8,7 @@ Page({
   id:'1',
   x:360,
   y:336,
-  funny: {},
-  zan:'zan'
+  funny: {}
   },
 
   /**
@@ -52,7 +51,8 @@ Page({
           nickName: 'MR.Mercury',
           commentTime: 1526441163299,
           content:"哈哈哈，第二个神了~",
-          zanNum: 38,          
+          zanNum: 38,
+          zan:false, //是否赞过          
           response:[
             {
               id: 'cm15264375485531111',
@@ -82,6 +82,7 @@ Page({
           commentTime: 1526441163299,
           content: "你们都是老司机~",
           zanNum: 7,
+          zan: true,
           response: [
             {
               id: 'cm15264659150022222',
@@ -112,35 +113,6 @@ Page({
       funny:funnyStore
     });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -194,15 +166,20 @@ Page({
       url: '../index/index',
     })
   },
-  activeZan:function() {
+  activeZan:function(e) {
+    let id = e.currentTarget.dataset.id;
+    let index = e.currentTarget.dataset.index;
+    let funny = this.data.funny;
     let zan = "zan";
-    if(this.data.zan == "zan") {
-      zan = "zanActive";
+    if (funny.comment[index].zan) {
+      funny.comment[index].zanNum -= 1;
     } else {
-      zan = "zan";
+      funny.comment[index].zanNum += 1;
     }
+    funny.comment[index].zan = !funny.comment[index].zan;
     this.setData({
-      zan: zan
+      funny: funny
     })
-  }
+  },
+  
 })
