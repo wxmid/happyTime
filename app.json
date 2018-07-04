@@ -1,7 +1,7 @@
 {
   "pages": [
+    "pages/publish/publish",
     "pages/index/index",
-    
     "pages/bluetooth/bluetooth",
     "pages/detail/detail",
     "pages/message/message",

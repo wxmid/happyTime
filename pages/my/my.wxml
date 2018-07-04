@@ -11,7 +11,7 @@
     </view>
   </button>
   <view class="my-topbar">
-    <view class='item-bar'>
+    <view class='item-bar' bindtap='gotoPublish'>
       <image src='../../assets/img/publish.png'></image>
       <text>我的原创</text>
     </view>

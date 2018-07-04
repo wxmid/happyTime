@@ -1,0 +1,9 @@
+.publish {
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.publish text {
+  font-size: 80rpx;
+  font-weight: bold;
+}
