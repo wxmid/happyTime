@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/publish/publish",
     "pages/index/index",
     "pages/bluetooth/bluetooth",
     "pages/detail/detail",
     "pages/message/message",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/publish/publish"
   ],
   "window": {
     "backgroundTextStyle": "light",
