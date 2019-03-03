@@ -1,6 +1,10 @@
 /**app.wxss**/
+page {
+  width: 100%;
+  height: 100%;
+}
 .page {
-  background: rgba(81, 169, 171, 0.2);
+  /* background: rgba(81, 169, 171, 0.2); */
 }
 .container {
   /* height: 100%;

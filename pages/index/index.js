@@ -1,4 +1,5 @@
 //index.js
+const HOST = require('../../config.js').host;
 //获取应用实例
 const app = getApp()
 
@@ -11,23 +12,27 @@ Page({
     newEvents:[
       {
         id:'sp0001',
+        user_id: '',
         imgurl:"../../assets/img/swiper1.jpg",
         title:"哈哈哈哈，这是啥..."
       },
       {
-        id: 'sp0002',        
+        id: 'sp0002',   
+        user_id: '',     
         imgurl: "../../assets/img/swiper2.jpg",
         title: "别人家的..."
       },
       {
-        id: 'sp0003',        
+        id: 'sp0003',    
+        user_id: '',    
         imgurl: "https://raw.githubusercontent.com/wxmid/happyTime/master/assets/img/swiper3.jpg",
         title: "是不是有点冷..."
       }
     ],
     funnyList:[],
     // thumIndex:3,
-    // thumIndex1: 2   
+    // thumIndex1: 2 
+    hasMessage:false,
   },
   //事件处理函数
   goTODetail: function(e) {
@@ -41,6 +46,7 @@ Page({
       funnyList:[
         {
           id:'fn0001',
+          user_id:'',
           isOriginal:true,
           headImg:'../../assets/img/head1.jpg',
           nickName:'GirlLog',
@@ -53,19 +59,21 @@ Page({
           ]
         },
         {
-          id: 'fn0002',          
+          id: 'fn0002',  
+          user_id: '',        
           isOriginal: false,
           headImg: '',
           nickName: '开心一刻',
           publishTime: '2018-04-10 19:46',
           abstract: '老爸给老妈买了一个特别好看的项链，我羡慕的不要不要的，一直夸赞项链好看。老妈说道：“虽然好看，你也不要买，这东西不适合你。”我问道：“怎么不适合我？”老妈答：“太贵，你买了你老公会骂你的。”',
           thumbnailList: [
-            '../../assets/img/gx4.jpg',
+            '../../assets/img/gx7.jpg',
             '../../assets/img/gx5.jpg'
           ]
         },
         {
           id: 'fn0003',
+          user_id: '',
           isOriginal: false,
           headImg: '',
           nickName: '开心一刻',
@@ -77,6 +85,7 @@ Page({
         },
         {
           id: 'fn0004',
+          user_id: '',
           isOriginal: true,
           headImg: '../../assets/img/head2.jpg',
           nickName: 'MR.Mercury',
@@ -91,6 +100,7 @@ Page({
         },
         {
           id: 'fn0005',
+          user_id: '',
           isOriginal: true,
           headImg: '../../assets/img/head3.jpg',
           nickName: 'O°MyへLove',
@@ -103,6 +113,7 @@ Page({
         },
         {
           id: 'fn0006',
+          user_id: '',
           isOriginal: false,
           headImg: '',
           nickName: '开心一刻',
@@ -115,6 +126,26 @@ Page({
           ]
         }
       ]
+    });
+    this.getHappyList();
+  },
+  getHappyList:function() {
+    wx.request({
+      url: HOST + 's', //仅为示例，并非真实的接口地址
+      method:"POST",
+      data: {
+        id:'fn0001'
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+      },
+      fail:function(res) {
+        console.log(res.data)
+        
+      }
     })
   }
 })

@@ -1,0 +1,6 @@
+<view class='publish' bindtap='createFunny'>
+  <text>+</text>
+</view>
+<view class='publish' bindtap='deleteById'>
+  <text>-</text>
+</view>

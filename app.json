@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/publish/publish",
     "pages/index/index",
+    "pages/bluetooth/bluetooth",
+    "pages/detail/detail",
     "pages/message/message",
     "pages/logs/logs",
-    "pages/my/my",    
-    "pages/detail/detail"
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,7 +16,7 @@
   },
   "tabBar": {
     "color": "white",
-    "selectedColor": "#718790",
+    "selectedColor": "#1296db",
     "borderStyle": "white",
     "backgroundColor": "#011e29",
     "list": [

@@ -1,2 +1,23 @@
 <!--pages/message/message.wxml-->
-<text class='message'>暂无消息</text>
+<block wx:if="{{hasMessage}}">
+  <view class="publish" wx:if="{{item.isOriginal}}" id='{{item.id}}'  bindtap='goTODetail'>
+        <view class='publisher-info'>
+          <view class='publisher-head'><image src='{{item.headImg}}'></image></view>
+          <view class='base-info'>
+            <text class='nickName'>{{item.nickName}}</text>
+            <text class='publish-time'>{{item.publishTime}}</text>
+          </view>
+          <view class='original'>
+            <image src='../../assets/img/original.png'></image>
+            <text>原创</text>
+          </view>
+        </view>
+        <view class='main-part'>
+          <text class='abstract'>{{item.abstract}}</text>
+          <view class='thumbnail'>
+            <image wx:for="{{funnyList[i].thumbnailList}}" wx:key="id" mode='aspectFill' lazy-load="true" style="width:{{((funnyList[i].thumbnailList.length <= 1) ? '100%' :(funnyList[i].thumbnailList.length%3) ? '50%' : '33.333%')}}" src='{{item}}'></image>
+          </view>
+        </view>
+      </view>
+</block>
+<text class='message' wx:if="{{!hasMessage}}">暂无消息</text>
