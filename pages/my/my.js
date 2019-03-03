@@ -32,7 +32,7 @@ function initChart(canvas, width, height) {
       },
       data: [{
         value: 60,
-        name: '当前飚速',
+        name: '',
       }]
 
     }]
