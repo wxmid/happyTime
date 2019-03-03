@@ -5,9 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    num: 1
   },
+  // 数值改变事件
+  numChange(e) {
+    const numi = e.detail;
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */

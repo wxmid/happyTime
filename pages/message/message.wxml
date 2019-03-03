@@ -21,3 +21,4 @@
       </view>
 </block>
 <text class='message' wx:if="{{!hasMessage}}">暂无消息</text>
+<num-controller num="{{num}}" bindnumChange="numChange"></num-controller>

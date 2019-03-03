@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "num-controller": "/components/counter/counter"
+  }
+}
